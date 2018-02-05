@@ -2,7 +2,6 @@ public class ComplexNumber {
     private double a;
     private double b;
     private double arg;
-    private static final char i = 'i';
 
     public ComplexNumber(double a, double b){
         this.a = a;
@@ -30,7 +29,10 @@ public class ComplexNumber {
 
     @Override
     public String toString(){
-        return new String("Re(" + this.a + ") + i im(" + this.b + ")"  + " Eller " + "(" + a + " + " + b + i + ")");
+        if(b == 0){
+            return new String("" + a);
+        }
+        return new String(a + " + " + b + 'i');
     }
 
     public static void main(String[] args) {
